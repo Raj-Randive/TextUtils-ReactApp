@@ -51,7 +51,7 @@ function App() {
     <>
       <Router>
         {/* --> Using props (JAVASCRIPT) */}
-        <Navbar title="Text-Utils" aboutText="About TextUtils" mode={mode} toggleMode={toggleMode} />  
+        <Navbar title="Text-Utils" aboutText="About" mode={mode} toggleMode={toggleMode} />  
 
         <Alert alert={alert} />
 

@@ -26,10 +26,7 @@ export default function TextForm(props) {
     // console.log(handleCapitalizeCase("hello my name is raj"));
     
     const handleCopy = () => {
-        var text = document.getElementById("myBox");
-        text.select();
-        navigator.clipboard.writeText(text.value);
-        document.getSelection().removeAllRanges();
+        navigator.clipboard.writeText(text);
         props.showAlert("Text Copied!", "success");
     }
     
@@ -70,10 +67,10 @@ export default function TextForm(props) {
 
                 {/*---> The split() method splits a string into an array of substrings.*/}
                 
-                <p>{ text.split(" ").filter( (element)=>{ return element.length !== 0 } ).length } words and {text.length} characters </p>
+                <p>{ text.split(/\s+/).filter( (element)=>{ return element.length !== 0 } ).length } words and {text.length} characters </p>
                 {/* filter ek function return karta hai and if that function returns true then vo element array ke andar rahega else agar false hua then vo array ke andar append nahi hoga. In this case we are seeing spaces */}
 
-                <p>{ 0.008 * text.split(" ").filter( (element)=>{ return element.length !== 0 } ).length} minutes read. </p>
+                <p>{ 0.008 * text.split(/\s+/).filter( (element)=>{ return element.length !== 0 } ).length} minutes read. </p>
 
                 <h2>Preview</h2>
                 <p>{text.length > 0 ? text : "Nothing to preview."}</p>
